@@ -15,15 +15,13 @@ library PresaleHelper {
         uint256 _tokenFee
     ) public pure returns (uint256) {
         uint256 listingRatePercent = _listingRate.mul(1000).div(_tokenPrice);
-        uint256 DAOLaunchTokenFee = _amount.mul(_tokenFee).div(1000);
-        uint256 amountMinusFee = _amount.sub(DAOLaunchTokenFee);
+        uint256 daolaunchTokenFee = _amount.mul(_tokenFee).div(1000);
+        uint256 amountMinusFee = _amount.sub(daolaunchTokenFee);
         uint256 liquidityRequired = amountMinusFee
             .mul(_liquidityPercent)
             .mul(listingRatePercent)
             .div(1000000);
-        uint256 tokensRequiredForPresale = _amount.add(liquidityRequired).add(
-            DAOLaunchTokenFee
-        );
+        uint256 tokensRequiredForPresale = _amount.add(liquidityRequired);
         return tokensRequiredForPresale;
     }
 }
