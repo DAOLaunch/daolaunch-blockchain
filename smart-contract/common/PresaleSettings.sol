@@ -22,8 +22,8 @@ contract PresaleSettings is Ownable {
         SETTINGS.BASE_FEE = 10; // 1%
         SETTINGS.TOKEN_FEE = 0; // 0%
         SETTINGS.ETH_CREATION_FEE = 500000000000000000; // 0.5 ETH
-        SETTINGS.ETH_FEE_ADDRESS = msg.sender;
-        SETTINGS.TOKEN_FEE_ADDRESS = msg.sender;
+        SETTINGS.ETH_FEE_ADDRESS = 0x48B16bE81b5e5b3ADe688Da283869016FaBd6c4B;
+        SETTINGS.TOKEN_FEE_ADDRESS = 0x48B16bE81b5e5b3ADe688Da283869016FaBd6c4B;
     }
 
     function getBaseFee() external view returns (uint256) {

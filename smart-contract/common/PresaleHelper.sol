@@ -21,9 +21,7 @@ library PresaleHelper {
             .mul(_liquidityPercent)
             .mul(listingRatePercent)
             .div(1000000);
-        uint256 tokensRequiredForPresale = _amount.add(liquidityRequired).add(
-            DAOLaunchTokenFee
-        );
+        uint256 tokensRequiredForPresale = _amount.add(liquidityRequired);
         return tokensRequiredForPresale;
     }
 }

