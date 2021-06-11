@@ -153,13 +153,13 @@ contract PresaleLockForwarder is Ownable {
 
     constructor() public {
         PRESALE_FACTORY = IPresaleFactory(
-            0xD2fc87C398D2e93d852830a1688D6E5E42281489
+            0x35D4dc34966018Ac8c35051f86105753F4BB4AFc
         );
         DAOLAUNCH_LOCKER = IUniswapV2Locker(
-            0xD62b8296E293EA793f8bAB4407FD8B67D8Fd6aCA
+            0x1eAfB71233164315E1eEf46c9b636861C2732801
         );
         UNI_FACTORY = IUniswapV2Factory(
-            0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73
+            0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f
         );
     }
 
