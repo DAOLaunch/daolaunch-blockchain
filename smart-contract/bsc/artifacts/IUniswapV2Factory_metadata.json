@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "createPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "getPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bsc/Presale01.sol": "IUniswapV2Factory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bsc/IERC20.sol": {
+			"keccak256": "0xd17e57402b882131f5a673e6cc05fd503c826b952e74359df2d4a8b7ee7b2331",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b43d442c12a9e9c637d66b4fb7dcae6ee7347477d06dea8bcf3352d081dd824f",
+				"dweb:/ipfs/QmW6zhxtbyikTC151CbT8hUisW6QePvso8M6aEV7BNdLAU"
+			]
+		},
+		"bsc/Presale01.sol": {
+			"keccak256": "0x50d54ca8aee6e842c749e025dbfe5453fb439a7290f908f2034ca6687374782a",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://64333aff4013a002a18aef38bdf466200e63025a3161950d8e365ab7c43c19d6",
+				"dweb:/ipfs/QmXWGW86eyqEJJUzfCLvJ27iSRibx7Rnba8fg6mRkQpkBp"
+			]
+		},
+		"common/EnumerableSet.sol": {
+			"keccak256": "0x7e5e7e78e53ec809db6f4b3563848b40a3ab2047f38868705dfa82e6535028d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b69e9da309d8448307ca6b0348ef315b6149730527eef01fb6c907a18cd62bd",
+				"dweb:/ipfs/QmPCNnFyiwfpcF4pyCJrkW44F2mM3r1F71QbNzF9xUwubo"
+			]
+		},
+		"common/ReentrancyGuard.sol": {
+			"keccak256": "0x5ca31ca2d9a618e3a15b2c65d8157f5e449b77b311357506024ec1df1131736c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2bfde2a020fb4ef795593461639939518da7d670a553eee8e36ac62f8e4e367",
+				"dweb:/ipfs/QmUyAv1qCMywo8WYVJk3XRmVPeNpxT6iXujDeqgSxhi6jM"
+			]
+		},
+		"common/SafeMath.sol": {
+			"keccak256": "0x171c2bdf89bcc4fbd2656423f512a1cb6429c3d8ecec0526d86ac32015892334",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a6a55b166197d166276103f7e6c8c66a8d22d1699a13f745c9680cf9af0f427",
+				"dweb:/ipfs/QmbBVXVAcMxvE7eNkXhRANGnmzcBVxCb8MNq34sUfBVjmh"
+			]
+		},
+		"common/TransferHelper.sol": {
+			"keccak256": "0x0f722fb690c455df4d5e12938b7c818b596f62cfe69624fd23ed5bcba67a0f71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c79749cf5231f56c1d381fc8493502d3a80c6b3c73a817d9535159060c0d93e4",
+				"dweb:/ipfs/QmVeGgstwsadDKHMju1XevVpHHU6Wgp37c2oPxb8sQFQbb"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,130 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ethereum/Presale01.sol": "IWETH"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"common/EnumerableSet.sol": {
+			"keccak256": "0x7e5e7e78e53ec809db6f4b3563848b40a3ab2047f38868705dfa82e6535028d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b69e9da309d8448307ca6b0348ef315b6149730527eef01fb6c907a18cd62bd",
+				"dweb:/ipfs/QmPCNnFyiwfpcF4pyCJrkW44F2mM3r1F71QbNzF9xUwubo"
+			]
+		},
+		"common/ReentrancyGuard.sol": {
+			"keccak256": "0x5ca31ca2d9a618e3a15b2c65d8157f5e449b77b311357506024ec1df1131736c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2bfde2a020fb4ef795593461639939518da7d670a553eee8e36ac62f8e4e367",
+				"dweb:/ipfs/QmUyAv1qCMywo8WYVJk3XRmVPeNpxT6iXujDeqgSxhi6jM"
+			]
+		},
+		"common/SafeMath.sol": {
+			"keccak256": "0x171c2bdf89bcc4fbd2656423f512a1cb6429c3d8ecec0526d86ac32015892334",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a6a55b166197d166276103f7e6c8c66a8d22d1699a13f745c9680cf9af0f427",
+				"dweb:/ipfs/QmbBVXVAcMxvE7eNkXhRANGnmzcBVxCb8MNq34sUfBVjmh"
+			]
+		},
+		"common/TransferHelper.sol": {
+			"keccak256": "0x0f722fb690c455df4d5e12938b7c818b596f62cfe69624fd23ed5bcba67a0f71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c79749cf5231f56c1d381fc8493502d3a80c6b3c73a817d9535159060c0d93e4",
+				"dweb:/ipfs/QmVeGgstwsadDKHMju1XevVpHHU6Wgp37c2oPxb8sQFQbb"
+			]
+		},
+		"ethereum/IERC20.sol": {
+			"keccak256": "0xd17e57402b882131f5a673e6cc05fd503c826b952e74359df2d4a8b7ee7b2331",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b43d442c12a9e9c637d66b4fb7dcae6ee7347477d06dea8bcf3352d081dd824f",
+				"dweb:/ipfs/QmW6zhxtbyikTC151CbT8hUisW6QePvso8M6aEV7BNdLAU"
+			]
+		},
+		"ethereum/Presale01.sol": {
+			"keccak256": "0xdf44e7fce7106b3c7cbb950f852c72f3016b42972c6b252636c7500d7ef40bb2",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ceab261b38293efb131cd1ce62819bbbf70623253cb95e74f4312ef57540c5fc",
+				"dweb:/ipfs/QmeqGHzaLZmio2v4ff6YZkCgZmPZ4WtDMmgQqcL6UXmgxc"
+			]
+		}
+	},
+	"version": 1
+}

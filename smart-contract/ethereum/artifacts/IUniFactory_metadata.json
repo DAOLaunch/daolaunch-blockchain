@@ -1,0 +1,118 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "getPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ethereum/UniswapV2Locker.sol": "IUniFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"common/Context.sol": {
+			"keccak256": "0x810fd58f2a705e73b50a33bdd16a82860660d3443c5a554574a0ec026c0e30d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://74ac46950367d905471fce4f3f9c8e8ad2aa788436cad298241b5f525b86c6aa",
+				"dweb:/ipfs/QmUS8CwkKsX5SgyL5RraP2Mn5kXytJH7ykFwGaytW7fiWJ"
+			]
+		},
+		"common/EnumerableSet.sol": {
+			"keccak256": "0x7e5e7e78e53ec809db6f4b3563848b40a3ab2047f38868705dfa82e6535028d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b69e9da309d8448307ca6b0348ef315b6149730527eef01fb6c907a18cd62bd",
+				"dweb:/ipfs/QmPCNnFyiwfpcF4pyCJrkW44F2mM3r1F71QbNzF9xUwubo"
+			]
+		},
+		"common/Ownable.sol": {
+			"keccak256": "0xc9b2138d88be363013ba17cab0528699573e03cc864b6e1d47bd1fbae7c5acd8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ac4e6116cdad07d8b42df5c1f9c30c0ef25167c89dd3a346eb4f205ced8bc2f6",
+				"dweb:/ipfs/QmRTNPBxKs1brtWsPTWPWZGeeEYrozkRAMfJ9mNHQw8gu4"
+			]
+		},
+		"common/ReentrancyGuard.sol": {
+			"keccak256": "0x5ca31ca2d9a618e3a15b2c65d8157f5e449b77b311357506024ec1df1131736c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2bfde2a020fb4ef795593461639939518da7d670a553eee8e36ac62f8e4e367",
+				"dweb:/ipfs/QmUyAv1qCMywo8WYVJk3XRmVPeNpxT6iXujDeqgSxhi6jM"
+			]
+		},
+		"common/SafeMath.sol": {
+			"keccak256": "0x171c2bdf89bcc4fbd2656423f512a1cb6429c3d8ecec0526d86ac32015892334",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a6a55b166197d166276103f7e6c8c66a8d22d1699a13f745c9680cf9af0f427",
+				"dweb:/ipfs/QmbBVXVAcMxvE7eNkXhRANGnmzcBVxCb8MNq34sUfBVjmh"
+			]
+		},
+		"common/TransferHelper.sol": {
+			"keccak256": "0x0f722fb690c455df4d5e12938b7c818b596f62cfe69624fd23ed5bcba67a0f71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c79749cf5231f56c1d381fc8493502d3a80c6b3c73a817d9535159060c0d93e4",
+				"dweb:/ipfs/QmVeGgstwsadDKHMju1XevVpHHU6Wgp37c2oPxb8sQFQbb"
+			]
+		},
+		"ethereum/UniswapV2Locker.sol": {
+			"keccak256": "0x87f79838d69acf9928dfd04aff37d2ac59fec4bec2c17a4c966cc16ea10d1845",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://a0022f88bf23066c0fc780c32759d15e9322f6b4aaecffc9e56fe3f00cad2762",
+				"dweb:/ipfs/QmZkrLLLqS4nz45y8nNuuDC6QL8rub9yngK5XSu4u7TzL6"
+			]
+		}
+	},
+	"version": 1
+}

@@ -120,10 +120,25 @@ contract Presale01 is ReentrancyGuard {
     IUniswapV2Factory public UNI_FACTORY;
     IWETH public WETH;
     mapping(address => BuyerInfo) public BUYERS;
-    EnumerableSet.AddressSet private WHITELIST;
     address payable public CALLER;
     GasLimit public GAS_LIMIT;
     address payable public DAOLAUNCH_DEV;
+
+    modifier onlyValidAccess(uint8 _v, bytes32 _r, bytes32 _s) {
+        require(isValidAccessMsg(msg.sender, _v, _r, _s));
+        _;
+    }
+    
+    function isValidAccessMsg(address _addr, uint8 _v, bytes32 _r, bytes32 _s) internal view returns(bool) {
+        bytes32 hash = keccak256(abi.encodePacked(address(this), _addr));
+        
+        return DAOLAUNCH_DEV == ecrecover(
+            keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)),
+            _v,
+            _r,
+            _s
+        );
+    }
 
     constructor(address _presaleGenerator) public payable {
         PRESALE_GENERATOR = _presaleGenerator;
@@ -192,16 +207,12 @@ contract Presale01 is ReentrancyGuard {
         PRESALE_FEE_INFO.TOKEN_FEE_ADDRESS = _tokenFeeAddress;
     }
 
-    function init3(address[] memory _white_list, address payable _caller)
+    function init3(bool is_white_list, address payable _caller)
         external
     {
         require(msg.sender == PRESALE_GENERATOR, "FORBIDDEN");
-        if (_white_list.length > 0) STATUS.WHITELIST_ONLY = true;
-
-        for (uint256 i = 0; i < _white_list.length; i++) {
-            WHITELIST.add(_white_list[i]);
-        }
-
+        
+        STATUS.WHITELIST_ONLY = is_white_list;
         CALLER = _caller;
     }
 
@@ -241,11 +252,9 @@ contract Presale01 is ReentrancyGuard {
     }
 
     // accepts msg.value for eth or _amount for ERC20 tokens
-    function userDeposit(uint256 _amount) external payable nonReentrant {
+    function userDeposit(uint256 _amount, uint8 _v, bytes32 _r, bytes32 _s) 
+        external payable onlyValidAccess(_v, _r, _s) nonReentrant  {
         require(presaleStatus() == 1, "NOT ACTIVE"); // ACTIVE
-        if (STATUS.WHITELIST_ONLY) {
-            require(WHITELIST.contains(msg.sender), "NOT WHITELISTED");
-        }
 
         BuyerInfo storage buyer = BUYERS[msg.sender];
         uint256 amount_in = PRESALE_INFO.PRESALE_IN_ETH ? msg.value : _amount;
@@ -303,6 +312,7 @@ contract Presale01 is ReentrancyGuard {
 
         require(!buyer.isWithdrawn, "NOTHING TO WITHDRAW");
         uint256 tokensOwed = buyer.tokensOwed;
+        require(tokensOwed > 0, "NOTHING TO WITHDRAW");
 
         STATUS.TOTAL_TOKENS_WITHDRAWN = STATUS.TOTAL_TOKENS_WITHDRAWN.add(
             tokensOwed
@@ -551,51 +561,9 @@ contract Presale01 is ReentrancyGuard {
         PRESALE_INFO.END_BLOCK = _endBlock;
     }
 
-    // editable at any stage of the presale
-    function setWhitelistFlag(bool _flag) external onlyPresaleOwner {
-        STATUS.WHITELIST_ONLY = _flag;
-    }
-
-    // editable at any stage of the presale
-    function editWhitelist(address[] memory _users, bool _add)
-        external
-        onlyPresaleOwner
-    {
-        if (_add) {
-            for (uint256 i = 0; i < _users.length; i++) {
-                WHITELIST.add(_users[i]);
-            }
-        } else {
-            for (uint256 i = 0; i < _users.length; i++) {
-                WHITELIST.remove(_users[i]);
-            }
-        }
-    }
-
     // if uniswap listing fails, call this function to release eth
     function finalize() external {
         require(msg.sender == DAOLAUNCH_DEV, "INVALID CALLER");
         selfdestruct(DAOLAUNCH_DEV);
-    }
-
-    // whitelist getters
-    function getWhitelistedUsersLength() external view returns (uint256) {
-        return WHITELIST.length();
-    }
-
-    function getWhitelistedUserAtIndex(uint256 _index)
-        external
-        view
-        returns (address)
-    {
-        return WHITELIST.at(_index);
-    }
-
-    function getUserWhitelistStatus(address _user)
-        external
-        view
-        returns (bool)
-    {
-        return WHITELIST.contains(_user);
     }
 }
