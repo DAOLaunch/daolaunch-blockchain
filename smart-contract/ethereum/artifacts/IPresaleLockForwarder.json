@@ -1,0 +1,116 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"lockLiquidity(address,address,uint256,uint256,uint256,address)": "2277d0e3",
+			"uniswapPairIsInitialised(address,address)": "8d8c70bb"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "contract IERC20",
+					"name": "_baseToken",
+					"type": "address"
+				},
+				{
+					"internalType": "contract IERC20",
+					"name": "_saleToken",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_baseAmount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_saleAmount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_unlock_date",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address payable",
+					"name": "_withdrawer",
+					"type": "address"
+				}
+			],
+			"name": "lockLiquidity",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token0",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "token1",
+					"type": "address"
+				}
+			],
+			"name": "uniswapPairIsInitialised",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

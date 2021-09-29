@@ -66,7 +66,7 @@ contract PresaleGenerator01 is Ownable {
         address payable _presaleOwner,
         IERC20 _presaleToken,
         IERC20 _baseToken,
-        address[] memory white_list,
+        bool is_white_list,
         uint256[12] memory uint_params,
         address payable _caller
     ) public payable {
@@ -142,7 +142,7 @@ contract PresaleGenerator01 is Ownable {
             PRESALE_SETTINGS.getEthAddress(),
             PRESALE_SETTINGS.getTokenAddress()
         );
-        newPresale.init3(white_list, _caller);
+        newPresale.init3(is_white_list, _caller);
         PRESALE_FACTORY.registerPresale(address(newPresale));
     }
 }

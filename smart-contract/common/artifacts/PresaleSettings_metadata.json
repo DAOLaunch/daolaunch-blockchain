@@ -1,0 +1,276 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "SETTINGS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "BASE_FEE",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TOKEN_FEE",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "ETH_FEE_ADDRESS",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "TOKEN_FEE_ADDRESS",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ETH_CREATION_FEE",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBaseFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEthAddress",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEthCreationFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTokenAddress",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTokenFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_ethAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_tokenFeeAddress",
+						"type": "address"
+					}
+				],
+				"name": "setFeeAddresses",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_baseFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_ethCreationFee",
+						"type": "uint256"
+					}
+				],
+				"name": "setFees",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"common/PresaleSettings.sol": "PresaleSettings"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"common/Context.sol": {
+			"keccak256": "0x810fd58f2a705e73b50a33bdd16a82860660d3443c5a554574a0ec026c0e30d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://74ac46950367d905471fce4f3f9c8e8ad2aa788436cad298241b5f525b86c6aa",
+				"dweb:/ipfs/QmUS8CwkKsX5SgyL5RraP2Mn5kXytJH7ykFwGaytW7fiWJ"
+			]
+		},
+		"common/EnumerableSet.sol": {
+			"keccak256": "0x7e5e7e78e53ec809db6f4b3563848b40a3ab2047f38868705dfa82e6535028d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b69e9da309d8448307ca6b0348ef315b6149730527eef01fb6c907a18cd62bd",
+				"dweb:/ipfs/QmPCNnFyiwfpcF4pyCJrkW44F2mM3r1F71QbNzF9xUwubo"
+			]
+		},
+		"common/Ownable.sol": {
+			"keccak256": "0xc9b2138d88be363013ba17cab0528699573e03cc864b6e1d47bd1fbae7c5acd8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ac4e6116cdad07d8b42df5c1f9c30c0ef25167c89dd3a346eb4f205ced8bc2f6",
+				"dweb:/ipfs/QmRTNPBxKs1brtWsPTWPWZGeeEYrozkRAMfJ9mNHQw8gu4"
+			]
+		},
+		"common/PresaleSettings.sol": {
+			"keccak256": "0x64ce48ed44f413cf76120f7af78ac510224df6d1b1c921a9178e233fd10d8145",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://abcd0612dabf9d8b301a679e4be0c828df83e0866cefb109cef64433900d290a",
+				"dweb:/ipfs/QmNM5KVoLhjudFD58KgrVRjKkm69trRsGafRsA9fLTAKCa"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,156 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_lpToken",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_unlock_date",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_referral",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_fee_in_eth",
+						"type": "bool"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_withdrawer",
+						"type": "address"
+					}
+				],
+				"name": "lockLPToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ethereum/PresaleGenerator01.sol": "IUniswapV2Locker"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"common/Context.sol": {
+			"keccak256": "0x810fd58f2a705e73b50a33bdd16a82860660d3443c5a554574a0ec026c0e30d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://74ac46950367d905471fce4f3f9c8e8ad2aa788436cad298241b5f525b86c6aa",
+				"dweb:/ipfs/QmUS8CwkKsX5SgyL5RraP2Mn5kXytJH7ykFwGaytW7fiWJ"
+			]
+		},
+		"common/EnumerableSet.sol": {
+			"keccak256": "0x7e5e7e78e53ec809db6f4b3563848b40a3ab2047f38868705dfa82e6535028d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b69e9da309d8448307ca6b0348ef315b6149730527eef01fb6c907a18cd62bd",
+				"dweb:/ipfs/QmPCNnFyiwfpcF4pyCJrkW44F2mM3r1F71QbNzF9xUwubo"
+			]
+		},
+		"common/Ownable.sol": {
+			"keccak256": "0xc9b2138d88be363013ba17cab0528699573e03cc864b6e1d47bd1fbae7c5acd8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ac4e6116cdad07d8b42df5c1f9c30c0ef25167c89dd3a346eb4f205ced8bc2f6",
+				"dweb:/ipfs/QmRTNPBxKs1brtWsPTWPWZGeeEYrozkRAMfJ9mNHQw8gu4"
+			]
+		},
+		"common/PresaleHelper.sol": {
+			"keccak256": "0x8b662db38916b80720a55b56793bceb59ac0a6b7e7520542da72e61c06481791",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://21531b0ed409f7461575f09b3b89221f60db84b1d9fc58d5cebbe264c4f0c677",
+				"dweb:/ipfs/QmWSycTckMH9E8ofnSu22pRD1eGqBLyqz3RSyW5SQDb39u"
+			]
+		},
+		"common/ReentrancyGuard.sol": {
+			"keccak256": "0x5ca31ca2d9a618e3a15b2c65d8157f5e449b77b311357506024ec1df1131736c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2bfde2a020fb4ef795593461639939518da7d670a553eee8e36ac62f8e4e367",
+				"dweb:/ipfs/QmUyAv1qCMywo8WYVJk3XRmVPeNpxT6iXujDeqgSxhi6jM"
+			]
+		},
+		"common/SafeMath.sol": {
+			"keccak256": "0x171c2bdf89bcc4fbd2656423f512a1cb6429c3d8ecec0526d86ac32015892334",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a6a55b166197d166276103f7e6c8c66a8d22d1699a13f745c9680cf9af0f427",
+				"dweb:/ipfs/QmbBVXVAcMxvE7eNkXhRANGnmzcBVxCb8MNq34sUfBVjmh"
+			]
+		},
+		"common/TransferHelper.sol": {
+			"keccak256": "0x0f722fb690c455df4d5e12938b7c818b596f62cfe69624fd23ed5bcba67a0f71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c79749cf5231f56c1d381fc8493502d3a80c6b3c73a817d9535159060c0d93e4",
+				"dweb:/ipfs/QmVeGgstwsadDKHMju1XevVpHHU6Wgp37c2oPxb8sQFQbb"
+			]
+		},
+		"ethereum/IERC20.sol": {
+			"keccak256": "0xd17e57402b882131f5a673e6cc05fd503c826b952e74359df2d4a8b7ee7b2331",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b43d442c12a9e9c637d66b4fb7dcae6ee7347477d06dea8bcf3352d081dd824f",
+				"dweb:/ipfs/QmW6zhxtbyikTC151CbT8hUisW6QePvso8M6aEV7BNdLAU"
+			]
+		},
+		"ethereum/Presale01.sol": {
+			"keccak256": "0x81ee00eaf9bdf103a14d714a8f5c01b18fa4967abc984c577d64d886e416d0e0",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://cc93b1715d5902e628da3f08aadf9d5db604cc12cf2b5afa4717dd83c59ffd6d",
+				"dweb:/ipfs/QmP6kSgPNLnbKvXGZHSyWiYG1wL1mpehwXfCzfumLzT56N"
+			]
+		},
+		"ethereum/PresaleGenerator01.sol": {
+			"keccak256": "0x97500f7195b5f690dfa95898405c6e0d2a12243a5daa46673dd923f21046b6be",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://1f206e8b7327282898fedcfca0bc25825f797e26d0e78dc99bbe1540d61e9912",
+				"dweb:/ipfs/QmU3Ugqz5rGUzYCMSjMt3vrKD2rDa4mmjDMYPuU4dPt8mj"
+			]
+		}
+	},
+	"version": 1
+}
